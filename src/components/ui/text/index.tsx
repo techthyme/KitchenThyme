@@ -63,11 +63,7 @@ const Text: FC<TextProps> = ({
   color,
   className,
   alignment,
-  iconVariant,
   bold = false,
-  right = false,
-  left = false,
-  center = false,
 }) => {
   if (variant === "link" && !href) {
     throw new Error("variant 'link' requires href prop");

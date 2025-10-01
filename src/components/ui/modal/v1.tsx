@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useState, useEffect } from "react";
+import React, { FC, Fragment, useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -7,7 +7,7 @@ import {
 } from "@headlessui/react";
 import clsx from "clsx";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import Text, { TextVariant } from "@/components/ui/text_v1";
+import Text from "@/components/ui/text";
 import { SizeVariants } from "@/types";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/button";
@@ -82,7 +82,7 @@ const Modal: FC<ModalProps> = ({
                   className={clsx(
                     `relative max-h-[90vh] w-full sm:my-auto sm:w-fit transform rounded-t-3xl 
                    sm:rounded-3xl  overflow-hidden max-w-screen overflow-y-auto bg-white
-                   --dark:bg-gray-800 text-left shadow-xl transition-all flex flex-col gap-4 mx-auto`,
+                   --dark:bg-gray-800 text-left shadow-xl transition-all flex flex-col gap-4 mx-auto`
                   )}
                 >
                   <DialogPanel>
@@ -101,16 +101,14 @@ const Modal: FC<ModalProps> = ({
                           <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                       </div>
-                      {heading && (
-                        <Text variant={TextVariant.TITLE} text={heading} />
-                      )}
+                      {heading && <Text variant="normal" text={heading} />}
                       <div className="border-t border-gray-200 w-full max-h-[70vh]" />
                     </div>
                     <div
                       className={clsx(
                         "flex flex-col overflow-y-auto gap-4 mt-8 mb-24 sm:mb-0 px-4 sm:px-8 mx-auto sm:pb-8 h-fit max-h-[80vh]",
                         sizeClasses[size],
-                        contentCustomStyle,
+                        contentCustomStyle
                       )}
                     >
                       {children}

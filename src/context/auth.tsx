@@ -49,7 +49,7 @@ const initialState: AuthState = {
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(AuthReducer, initialState);
+  const [, dispatch] = useReducer(AuthReducer, initialState);
 
   const login = (userId: string) => {
     dispatch({ type: "LOGIN", payload: userId });

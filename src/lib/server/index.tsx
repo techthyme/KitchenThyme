@@ -128,15 +128,15 @@ export function validateServerApiClient(): boolean {
  * Convenience methods for common server API operations
  */
 export const serverApi = {
-  get: (url: string, config?: any) => serverApiClient.get(url, config),
-  post: (url: string, data?: any, config?: any) => {
+  get: (url: string, config?: object) => serverApiClient.get(url, config),
+  post: (url: string, data?: object, config?: object) => {
     return serverApiClient.post(url, data, config);
   },
-  put: (url: string, data?: any, config?: any) =>
+  put: (url: string, data?: object, config?: object) =>
     serverApiClient.put(url, data, config),
-  delete: (url: string, config?: any) => serverApiClient.delete(url, config),
+  delete: (url: string, config?: object) => serverApiClient.delete(url, config),
 
-  patch: (url: string, data?: any, config?: any) =>
+  patch: (url: string, data?: object, config?: object) =>
     serverApiClient.patch(url, data, config),
 };
 

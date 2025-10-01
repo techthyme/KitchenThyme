@@ -45,7 +45,7 @@ export enum IconVariant {
 }
 
 const Icon: FC<IconProps> = ({ variant, strokeWidth }) => {
-  let sw = strokeWidth === undefined ? strokeWidth : 1.5;
+  const sw = strokeWidth === undefined ? strokeWidth : 1.5;
   switch (variant) {
     case IconVariant.ADD:
       return (
