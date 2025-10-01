@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/ui/nav";
-// import Footer from "@/components/ui/footer";
+import Footer from "@/components/footer";
 import { Noto_Sans } from "next/font/google";
 import { AuthProvider } from "@/context/auth";
 
@@ -28,7 +28,7 @@ export default function RootLayout({
         <AuthProvider>
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </AuthProvider>
       </body>
     </html>
