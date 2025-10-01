@@ -1,20 +1,18 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import Navbar from "@/components/ui/nav";
+import Footer from "@/components/footer";
+import { Noto_Sans } from "next/font/google";
+import { AuthProvider } from "@/context/auth";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Coming Soon",
-  description: "Something amazing is in the works. Stay tuned!",
+  title: "Its Kitchen Thyme",
+  description: "A marketplace for chefs and people who love what they do.",
 };
 
 export default function RootLayout({
@@ -25,9 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${notoSans.variable} antialiased bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100`}
       >
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
