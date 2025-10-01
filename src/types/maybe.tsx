@@ -36,5 +36,7 @@ export enum ProductCategory {
   HONEY = "honey",
   FLOWERS = "flowers",
   PLANTS = "plants",
+  BAKED_GOODS = "baked_goods",
+  CONDIMENTS_SAUCES = "condiments_sauces",
   OTHER = "other",
 }
