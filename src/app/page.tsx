@@ -7,10 +7,10 @@ import Drawer from "@/components/ui/drawer";
 import HeroSectionNew from "@/components/hero-section-new";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Marketplace", href: "/marketplace" },
+  { name: "Chef Dashboard", href: "/chef-dashboard" },
+  { name: "Checkout", href: "/checkout" },
+  { name: "About", href: "#about" },
 ];
 
 export default function Example() {
@@ -24,7 +24,7 @@ export default function Example() {
 
   return (
     <div className="bg-white dark:bg-gray-900">
-      <header className="hidden absolute inset-x-0 top-0 z-50">
+      <header className="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"
           className="flex items-center justify-between p-6 lg:px-8"

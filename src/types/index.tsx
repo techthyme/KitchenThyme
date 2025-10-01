@@ -407,5 +407,15 @@ export enum NotificationType {
   SYSTEM = "system",
 }
 
+/**
+ * Kitchen booking information for attendee registration
+ */
+export interface AttendeeInfo {
+  name: string;
+  email: string;
+  phone: string;
+  organization: string;
+}
+
 // Legacy deprecated types - to be removed in future versions
 // import * as dep from "./deprecated";
