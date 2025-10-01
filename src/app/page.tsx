@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Drawer from "@/components/ui/drawer";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -13,6 +14,12 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  function toggleDrawer() {
+    console.log("drawer cliccked....", drawerOpen);
+    setDrawerOpen(!drawerOpen);
+  }
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -166,12 +173,12 @@ export default function Example() {
                 cuisine is coming soon!
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
+                <button
                   className="rounded-full bg-green-600 px-4 py-4 text-sm font-semibold text-white shadow-xs hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-green-500 dark:hover:bg-green-400 dark:focus-visible:outline-green-500"
+                  onClick={toggleDrawer}
                 >
                   Join the waitlist
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -189,6 +196,7 @@ export default function Example() {
           />
         </div>
       </div>
+      <Drawer open={drawerOpen} toggleFn={toggleDrawer} />
     </div>
   );
 }
